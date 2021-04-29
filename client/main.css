@@ -1,4 +1,23 @@
 body {
   padding: 10px;
-  font-family: sans-serif;
+  font-family: 'Antonio', sans-serif;
+  color: white;
+  background-color: #333;
+}
+
+h1{
+  color: red;
+}
+
+h3{
+  color: #888;
+}
+
+button{
+  background: #555;
+  border-radius: 1rem;
+  padding: 1rem;
+  border-color: none;
+  color: white;
+  margin: 1rem;
 }
