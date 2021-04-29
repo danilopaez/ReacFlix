@@ -23,4 +23,8 @@ Template.Equipos.events({
 
     Session.set('a', Session.get('a') + 10)
   },
+  'keyup input'(e) {
+
+    Session.set('b', parseFloat(e.target.value) || 0)
+  }
 });

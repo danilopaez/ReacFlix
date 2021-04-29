@@ -21,3 +21,14 @@ button{
   color: white;
   margin: 1rem;
 }
+
+input{
+
+  border-radius: 1rem;
+  padding: 1rem;
+  background: grey;
+}
+
+::placeholder {
+  color: black;
+}
