@@ -6,13 +6,14 @@ import './main.html';
 Template.Equipos.onCreated(function () {
 
   Session.set('a', 1);
+  Session.set('b', 2);
 });
 
 Template.Equipos.helpers({
-  A() {
+  a: () => Session.get('a'),
+  b: () => Session.get('b'),
+  c: () => Session.get('a') + Session.get('b'),
 
-    return Session.get('a');
-  },
 });
 
 
