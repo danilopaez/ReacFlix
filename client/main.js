@@ -5,8 +5,8 @@ import './main.html';
 
 Template.Equipos.onCreated(function () {
 
-  Session.set('a', 1);
-  Session.set('b', 2);
+  Session.setDefault('a', 1);
+  Session.setDefault('b', 2);
 });
 
 Template.Equipos.helpers({
