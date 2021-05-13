@@ -1,23 +1,36 @@
 <body>
 
-  <h1>REACFLIX</h1>
+  <h1><ion-icon name="videocam-outline"></ion-icon> REACFLIX</h1>
   <h2>Reactive Programming</h2>
-  <h3> Temporada 2</h3>
+  <h3> Temporada 3</h3>
 
-  {{> Equipos}}
+  {{> Series}}
 
+  <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 
 
 
-<template name="Equipos">
+<template name="Series">
+  <h4>Más Populares de Argentina hoy</h4>
+  <div class="series">
+        
 
-  a: {{ a }} <br>
-  b: {{ b }} <br>
-  c: {{ c }} <br>
-
-  <button>Sumar 10 a la variable: a</button>
-  <input type="text" placeholder="valor de b">
+    {{#each series}}
+      <div class="box-serie">
+        <img src="{{ img }}" alt="{{ name }}">
+        <span><ion-icon name="eye-outline"></ion-icon> {{views}}</span>
+      </div>
+      {{/each}}
+  </div>
+  {{#if showReset}}
+    
+      <button>
+        <ion-icon name="refresh-outline"></ion-icon> Reset
+      </button>
+    
+  {{/if}}
 </template>
 

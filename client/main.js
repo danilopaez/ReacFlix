@@ -1,30 +1,37 @@
 import { Template } from 'meteor/templating';
+import { Series } from '../imports/api/SeriesCollections';
 
 
 import './main.html';
 
-Template.Equipos.onCreated(function () {
+Template.Series.onCreated(function () {
 
-  Session.setDefault('a', 1);
-  Session.setDefault('b', 2);
+  Meteor.subscribe('allSeries');
 });
 
-Template.Equipos.helpers({
-  a: () => Session.get('a'),
-  b: () => Session.get('b'),
-  c: () => Session.get('a') + Session.get('b'),
-
+Template.Series.helpers({
+  series() {
+    return Series.find({}, { sort: { views: -1 } })
+  },
+  showReset() {
+    return Series.find({ views: { $gte: 10 } }).count() > 0;
+  }
 });
 
 
 
-Template.Equipos.events({
+Template.Series.events({
+  'click img'(e) {
+    console.log(this.name);
+
+    Series.update(this._id, { $inc: { views: 1 } })
+  },
   'click button'() {
 
-    Session.set('a', Session.get('a') + 10)
-  },
-  'keyup input'(e) {
+    Meteor.call('resetViews', e => {
+      if (e)
+        throw new Meteor.Error('Error', e.reason)
 
-    Session.set('b', parseFloat(e.target.value) || 0)
+    })
   }
 });

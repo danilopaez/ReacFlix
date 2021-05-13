@@ -16,10 +16,11 @@ h3{
 button{
   background: #555;
   border-radius: 1rem;
-  padding: 1rem;
-  border-color: none;
+  padding: 1rem;  
   color: white;
   margin: 1rem;
+  width: 20vw;
+
 }
 
 input{
@@ -31,4 +32,40 @@ input{
 
 ::placeholder {
   color: black;
+}
+
+.box-serie{
+  
+  margin: 0.5rem;
+
+  
+}
+
+.box-serie img{
+  display: block;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #111;
+  cursor: pointer;
+
+}
+
+.box-serie img:hover{
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  transition-timing-function: ease-out;
+  transition: 0.25s;
+}
+
+
+
+.box-serie span{
+  display: block;
+  text-align: center;
+  opacity: 0.5;
+}
+
+.series{
+  display: flex;
+  flex-wrap: wrap
 }
