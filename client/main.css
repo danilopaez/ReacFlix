@@ -69,3 +69,14 @@ input{
   display: flex;
   flex-wrap: wrap
 }
+
+
+#dosis{
+  font-size: 3rem;
+  text-align: center;
+  margin: 2rem;
+}
+
+img{
+  width: 90vw;
+}

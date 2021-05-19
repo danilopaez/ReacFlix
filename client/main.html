@@ -14,8 +14,11 @@
 
 <template name="VaccinesTempl">
   {{#with vaccine}}
+      
+      <div id="dosis">Dosis: {{ dose }}</div>
+      
       <img src="{{url}}"> <br>
-      Dosis: {{ dose }}
+      
   {{/with}}
 </template>
 
