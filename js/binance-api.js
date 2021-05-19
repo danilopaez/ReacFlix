@@ -18,16 +18,16 @@ ws.onmessage = function (event) {
 
 
   if (d.a.length)
-    app.askAcc = d.a.map(a => { return a[0] * a[1] }).reduce((acc, curr) => acc + curr);
+    app.askAcc = d.a.map(a => a[0] * a[1]).reduce((acc, curr) => acc + curr);
 
   if (d.b.length)
-    app.bidAcc = d.b.map(b => { return b[0] * b[1] }).reduce((acc, curr) => acc + curr);
+    app.bidAcc = d.b.map(b => b[0] * b[1]).reduce((acc, curr) => acc + curr);
 
   app.ask = d.a;
   app.bid = d.b;
 
   if (app.askAcc > app.bidAcc)
-    return app.color = "verde"
+    return app.color = "rojo"
 
-  return app.color = "rojo"
+  return app.color = "verde"
 }
