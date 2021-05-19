@@ -1,11 +1,10 @@
 <body>
 
-  <h1><ion-icon name="videocam-outline"></ion-icon> REACFLIX</h1>
+  <h1><ion-icon name="videocam-outline"></ion-icon> CovidFLIX</h1>
   <h2>Reactive Programming</h2>
-  <h3> Temporada 3</h3>
+  <h3> Temporada Covid</h3>
 
-  {{> Series}}
-
+  {{> VaccinesTempl}}
   <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
 </body>
@@ -13,24 +12,10 @@
 
 
 
-<template name="Series">
-  <h4>Más Populares de Argentina hoy</h4>
-  <div class="series">
-        
-
-    {{#each series}}
-      <div class="box-serie">
-        <img src="{{ img }}" alt="{{ name }}">
-        <span><ion-icon name="eye-outline"></ion-icon> {{views}}</span>
-      </div>
-      {{/each}}
-  </div>
-  {{#if showReset}}
-    
-      <button>
-        <ion-icon name="refresh-outline"></ion-icon> Reset
-      </button>
-    
-  {{/if}}
+<template name="VaccinesTempl">
+  {{#with vaccine}}
+      <img src="{{url}}"> <br>
+      Dosis: {{ dose }}
+  {{/with}}
 </template>
 

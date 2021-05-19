@@ -1,41 +1,25 @@
 import { Meteor } from 'meteor/meteor';
-import { Series } from '../imports/api/SeriesCollections';
+import { Vaccines } from '../imports/api/VaccinesCollection'
 
-import '../imports/api/methods/resetViews'
-import '../imports/api/publications/allSeries'
 
-Meteor.startup(() => {
+import '../imports/api/publications/vaccines'
 
-  if (Series.find().count() == 0) {
-    Series.insert({
-      img: 'https://ing-unc.s3.amazonaws.com/gambito-de-luifa.png',
-      name: 'Gambito de Luifa',
-      views: 0
-    });
-    Series.insert({
-      img: 'https://ing-unc.s3.amazonaws.com/la-caida.jpg',
-      name: 'La Caida',
-      views: 0
-    });
-    Series.insert({
-      img: 'https://ing-unc.s3.amazonaws.com/balientes.jpeg',
-      name: 'Balientes',
-      views: 0
-    });
-    Series.insert({
-      img: 'https://ing-unc.s3.amazonaws.com/gloria.png',
-      name: 'Gloria',
-      views: 0
-    });
-    Series.insert({
-      img: 'https://ing-unc.s3.amazonaws.com/heart-of-a-lion.png',
-      name: 'Heart of a Lion',
-      views: 0
-    });
-    Series.insert({
-      img: 'https://ing-unc.s3.amazonaws.com/el-internacional.png ',
-      name: 'El internacional',
-      views: 0
-    });
-  }
-});
+Meteor.startup(function () {
+    if (Vaccines.find().count() === 0) {
+        Vaccines.insert({
+            "name": "Sputnik V",
+            "series": "A",
+            "dose": 200,
+            "ageMin": 90,
+            "url": "/sputnik.jpg"
+        });
+        Vaccines.insert({
+            "name": "Sputnik V",
+            "series": "B",
+            "dose": 100,
+            "ageMin": 80,
+            "url": "/sputnik.jpg"
+        });
+
+    }
+})

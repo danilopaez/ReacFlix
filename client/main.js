@@ -1,37 +1,17 @@
 import { Template } from 'meteor/templating';
-import { Series } from '../imports/api/SeriesCollections';
+import { Vaccines } from '../imports/api/VaccinesCollection';
 
 
 import './main.html';
 
-Template.Series.onCreated(function () {
+Template.VaccinesTempl.onCreated(function () {
 
-  Meteor.subscribe('allSeries');
+  Meteor.subscribe('getVaccines', 40);
 });
 
-Template.Series.helpers({
-  series() {
-    return Series.find({}, { sort: { views: -1 } })
+Template.VaccinesTempl.helpers({
+  vaccine() {
+    console.log(Vaccines.find().count())
+    return Vaccines.findOne();
   },
-  showReset() {
-    return Series.find({ views: { $gte: 10 } }).count() > 0;
-  }
-});
-
-
-
-Template.Series.events({
-  'click img'(e) {
-    console.log(this.name);
-
-    Series.update(this._id, { $inc: { views: 1 } })
-  },
-  'click button'() {
-
-    Meteor.call('resetViews', e => {
-      if (e)
-        throw new Meteor.Error('Error', e.reason)
-
-    })
-  }
 });
