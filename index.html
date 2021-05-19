@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .rojo{
+            background-color: red;
+        }
+
+        .verde{
+            background-color: green;
+        }
+
+    </style>
+</head>
+<body >
+    <div id="app">
+
+        <h1>AskAcc - BidAcc</h1>
+
+        <h3  :class="color">{{ askAcc - bidAcc }}</h3>
+
+
+
+        Ask:
+        <ol>
+            <li v-for="a in ask">
+                {{ a }}
+            </li>
+        </ol>
+
+        {{ color }}
+
+        Bid
+        <ol>
+            <li v-for="b in bid">
+                {{ b }}
+            </li>
+        </ol>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/binance-api.js"></script>
+</body>
+</html>
