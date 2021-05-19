@@ -11,7 +11,6 @@ Template.VaccinesTempl.onCreated(function () {
 
 Template.VaccinesTempl.helpers({
   vaccine() {
-    console.log(Vaccines.find().count())
     return Vaccines.findOne();
   },
 });
