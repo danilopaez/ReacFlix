@@ -2,7 +2,8 @@
 Ejemplos Prácticos de __Programación Reactiva__ en Ingenieria de Software UNC
 
   La idea principal es familiarizarnos con los conceptos de programacion reactiva, empleando el patron de arquitectura Model-View-ViewModel( MVVM ) y el patron de Diseño Publisher-Subscriber. Al final del dia se desea hacer una implementacion simplificada del TOP10 de Series de Netflix&#174; trabajando sobre el concepto de MicroFrontend.
-  
+
+![Flyer ReacFlix](https://raw.githubusercontent.com/danilopaez/ReacFlix/master/docs/flyer.png "Flyer ReacFlix")
   
 ## Entrando en Calor con [VUE]( https://vuejs.org/ )
 Para el primer ejemplo donde nos conectamos a Binance( Exchange de Criptomonedas) mediante WebSocket Seguro y luego renderizamos reactivamente la vista empleando VueJS tienes que pedir la rama vue asi:
