@@ -64,7 +64,11 @@ Por ultimos vamos a implementar finalmente el MicroComponente Frontend que nos m
 git checkout t3
 ```
 
-
+Reactive Programming Slides
+_____
+  * [Presentacion.key](https://github.com/danilopaez/ReacFlix/blob/master/docs/Presentacion.key?raw=true)
+  * [Presentacion.pdf](https://github.com/danilopaez/ReacFlix/blob/master/docs/Presentacion.pdf?raw=true)
+  * [Presentacion.pptx](https://github.com/danilopaez/ReacFlix/blob/master/docs/Presentacion.pptx?raw=true)
 
 Todos estos ejemplos, son ejemplos didácticos. No los use en produccion. Para empezar se deberia sacar el paquere INSECURE y se deberian hacer varios ajustes menores para ponerlo en produccion.
 
